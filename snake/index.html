@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Змейка — Собери слово</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="topbar">
+    <div class="animal-area">
+      <div class="animal-emoji" id="animalEmoji">🐍</div>
+    </div>
+    <div class="score-area">
+      <span>Слова: </span><span id="score">0</span>
+    </div>
+  </div>
+
+  <div class="game-wrap">
+    <canvas id="game" width="560" height="560"></canvas>
+    <div class="overlay hidden" id="overlay">
+      <div class="overlay-content">
+        <div class="game-over-title">Игра окончена</div>
+        <div class="game-over-reason" id="gameOverReason"></div>
+        <button id="restartBtn" type="button">Играть снова</button>
+        <div class="hint">Управление: стрелки или WASD • Перезапуск: R</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hint-bar">
+    Собирайте буквы английского названия животного по порядку. Неправильная буква — конец игры.
+  </div>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
+
+
