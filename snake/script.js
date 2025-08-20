@@ -297,16 +297,19 @@
 
   // Touch / mobile controls
   if (mobileControlsEl) {
-    mobileControlsEl.addEventListener('click', (e) => {
+    const handleDir = (e) => {
       const target = e.target;
       if (!(target instanceof HTMLElement)) return;
       const dir = target.getAttribute('data-dir');
       if (!dir) return;
+      e.preventDefault();
       if (dir === 'up') nextDirection = { x: 0, y: -1 };
       else if (dir === 'down') nextDirection = { x: 0, y: 1 };
       else if (dir === 'left') nextDirection = { x: -1, y: 0 };
       else if (dir === 'right') nextDirection = { x: 1, y: 0 };
-    });
+    };
+    mobileControlsEl.addEventListener('pointerdown', handleDir, { passive: false });
+    mobileControlsEl.addEventListener('click', handleDir);
   }
 
   // Polyfill roundRect для Safari старых версий

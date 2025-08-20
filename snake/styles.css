@@ -130,6 +130,7 @@ button#restartBtn:active { transform: translateY(1px); }
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 10px;
+  transform: rotate(45deg);
 }
 
 .ctrl {
@@ -142,8 +143,9 @@ button#restartBtn:active { transform: translateY(1px); }
   padding: 12px 0;
   text-align: center;
   box-shadow: 0 6px 16px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+  transform: rotate(-45deg);
 }
 
-.ctrl:active { transform: translateY(1px); }
+.ctrl:active { transform: rotate(-45deg) translateY(1px); }
 
 
