@@ -111,4 +111,39 @@ button#restartBtn:active { transform: translateY(1px); }
 /* Canvas rendering helpers (colors) */
 .legend { display:none; }
 
+/* --- Mobile controls --- */
+.mobile-controls {
+  display: none;
+  width: min(860px, calc(100% - 24px));
+  margin-bottom: 18px;
+  user-select: none;
+}
+
+@media (pointer: coarse), (max-width: 720px) {
+  .mobile-controls { display: block; }
+}
+
+.controls-grid {
+  width: 220px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.ctrl {
+  background: linear-gradient(180deg, #2a3249, #1a2031);
+  border: 1px solid #2e3651;
+  border-radius: 12px;
+  color: #e7e9f1;
+  font-weight: 800;
+  font-size: 18px;
+  padding: 12px 0;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.ctrl:active { transform: translateY(1px); }
+
 

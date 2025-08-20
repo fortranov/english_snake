@@ -17,6 +17,7 @@
   const overlayEl = document.getElementById('overlay');
   const gameOverReasonEl = document.getElementById('gameOverReason');
   const restartBtn = document.getElementById('restartBtn');
+  const mobileControlsEl = document.getElementById('mobileControls');
 
   /** Настройки сетки */
   const GRID_SIZE = 20; // 20x20
@@ -293,6 +294,20 @@
   }
   window.addEventListener('keydown', onKeyDown);
   restartBtn.addEventListener('click', () => restart(true));
+
+  // Touch / mobile controls
+  if (mobileControlsEl) {
+    mobileControlsEl.addEventListener('click', (e) => {
+      const target = e.target;
+      if (!(target instanceof HTMLElement)) return;
+      const dir = target.getAttribute('data-dir');
+      if (!dir) return;
+      if (dir === 'up') nextDirection = { x: 0, y: -1 };
+      else if (dir === 'down') nextDirection = { x: 0, y: 1 };
+      else if (dir === 'left') nextDirection = { x: -1, y: 0 };
+      else if (dir === 'right') nextDirection = { x: 1, y: 0 };
+    });
+  }
 
   // Polyfill roundRect для Safari старых версий
   if (!CanvasRenderingContext2D.prototype.roundRect) {
